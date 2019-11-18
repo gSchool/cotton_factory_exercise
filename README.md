@@ -17,6 +17,9 @@ Your task is to help rebuild the Products service. Everyone in the class is work
 * Jackets
 * Socks
 * Hats
+* Slacks
+* Skirts
+* Dresses
 
 You or your group will be assigned a single product and your task is the implement it and integrate your code with the project.
 
