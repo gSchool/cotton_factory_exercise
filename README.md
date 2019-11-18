@@ -7,6 +7,7 @@ The Products service is responsible for all the products that they sell. It incl
 It works with the other services which aren't being updated in this phase: Orders and Accounts.
 
 ## Exercise
+> Duration: 2-4 blocks
 
 This exercise is about your role in the CI/CD cycle and understanding the process of continuous integration.
 
@@ -44,10 +45,3 @@ Focus on:
 The ideal PR/MR only updates a couple of files (the test file and the files under test) and only a few lines of code within each. This helps make your code easy to review and decreases the chances of submitting bugs.
 
 This is an opportunity to practice your dev workflow. Your role in the CI/CD process is develop well-tested code on a regular basis to contribute to frequent application updates. 
-
-### Stories
-
-As a user:
-- I can browse a page of clothing so I can see the selection.
-- I can view a particular clothing so I can see more about it.
-- I can customize a piece of clothing by size and/or color so I can view options.
