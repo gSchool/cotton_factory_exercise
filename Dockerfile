@@ -1,17 +1,14 @@
-# Use Java distribution from Docker
-FROM openjdk:11-jdk-alpine
+# Multi-stage Build
 
-# Temporary data storage used by data services like Redis
+# Stage 1: Build .jar
+FROM openjdk:11.0-jdk-slim as builder
 VOLUME /tmp
+COPY . .
+RUN ./gradlew build
 
-# Working directory for this app
+# Stage 2: Run JRE for the .jar
+FROM openjdk:11.0-jre-slim
 WORKDIR /app
-
-# Copy this application to a new location
-COPY . /app
-
-# Build
-CMD ["./gradlew", "build", "docker"]
-
-# Run the application from the app build folder
-ENTRYPOINT ["java","-jar","/app/build/libs/cotton_factory_products-0.1.0.jar"]
+COPY --from=builder build/libs/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
+EXPOSE 8200
